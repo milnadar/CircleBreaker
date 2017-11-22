@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 6c831ff7c3577fb428ad754d62a34b0e
+timeCreated: 1511319418
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Pencil Shading
+  fontNames:
+  - Pencil Shading
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
