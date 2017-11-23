@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour {
     private void LoadLevel(int levelNumber)
     {
         ball.startNewLevel();
-        OneHitBlock.numberOfBricks = 0;
+        Brick.numberOfBricks = 0;
         currentLevel++;
         if (levelNumber == 0)
         {

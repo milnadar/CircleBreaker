@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OneHitBlock : MonoBehaviour {
+public class Brick : MonoBehaviour {
 
     public Sprite[] hitSprites;
     public AudioClip crack;

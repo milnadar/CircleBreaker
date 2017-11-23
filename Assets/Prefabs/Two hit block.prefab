@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4452839364410644}
   - component: {fileID: 212340673131184916}
   - component: {fileID: 61219453302730606}
-  - component: {fileID: 114754234286213478}
+  - component: {fileID: 114470217583302482}
   m_Layer: 0
   m_Name: Two hit block
   m_TagString: Breakable
@@ -67,7 +67,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 0.3203125}
   m_EdgeRadius: 0
---- !u!114 &114754234286213478
+--- !u!114 &114470217583302482
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -80,7 +80,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitSprites:
   - {fileID: 21300004, guid: 748ddd8facb4c934fa15acbe269b4195, type: 3}
-  crack: {fileID: 8300000, guid: 92f1a2994df46af4dbb92bb5aab9eae2, type: 3}
+  crack: {fileID: 8300000, guid: a97e5635b8feca845bb45a71a84f3694, type: 3}
 --- !u!212 &212340673131184916
 SpriteRenderer:
   m_ObjectHideFlags: 1
