@@ -13,16 +13,15 @@ public class GameManager : MonoBehaviour {
     private List<GameObject> bricks = new List<GameObject>();
     private Ball ball = null;
 
-    enum BrickType
-    {
-        OneHit = 0,
-        TwoHit,
-        ThreeHit
-    };
+    public bool tesSetup = false;
+
+    private Circle drawnCircle = null;
 
     public GameObject oneHitBrick;
     public GameObject twoHitBrick;
     public GameObject threeHitBrick;
+
+    private Vector3 screenCenter;
 
     public void ProcessBallLoss() {
         lives--;
@@ -37,10 +36,12 @@ public class GameManager : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        screenCenter = new Vector3(Screen.width / 2.0f / Screen.width * 16.0f, Screen.height / 2.0f / Screen.height * 12.0f, 0.0f);
         levelManager = GameObject.FindObjectOfType<LevelManager>();
         ball = GameObject.FindObjectOfType<Ball>();
-        LoadNextLevel();
         text.text = lives.ToString();
+        drawnCircle = GameObject.FindObjectOfType<Circle>();
+        LoadNextLevel();
     }
 
 	// Update is called once per frame
@@ -63,8 +64,10 @@ public class GameManager : MonoBehaviour {
     {
         if (currentLevel >= amountOfLevels)
             levelManager.LoadLevel("Win");
-        else
+        else {
+            drawnCircle.ResetCircle();
             LoadLevel(currentLevel);
+        }
     }
 
     private void LoadLevel(int levelNumber)
@@ -74,11 +77,19 @@ public class GameManager : MonoBehaviour {
         currentLevel++;
         if (levelNumber == 0)
         {
+            if(tesSetup) {
+                Instantiate(oneHitBrick, screenCenter, Quaternion.identity);
+                return;
+            }
             CreateCircle(1, twoHitBrick);
             CreateCircle(2, oneHitBrick);
         }
         else if (levelNumber == 1)
         {
+            if(tesSetup) {
+                Instantiate(oneHitBrick, screenCenter, Quaternion.identity);
+                return;
+            }
             CreateCircle(3.5f, oneHitBrick);
             CreateCircle(3, twoHitBrick);
             CreateCircle(2, threeHitBrick);
@@ -88,7 +99,7 @@ public class GameManager : MonoBehaviour {
     void CreateCircle(float radius, GameObject brickType)
     {
         float amount = Mathf.Floor(2 * Mathf.PI * radius);
-        Vector3 screenCenter = new Vector3(Screen.width / 2.0f / Screen.width * 16.0f, Screen.height / 2.0f / Screen.height * 12.0f, 0.0f);
+        
         float angle = 2.0f * Mathf.PI / amount;
         float delta = 0.0f;
         for(int i = 0; i < amount; ++i) {

@@ -4,11 +4,14 @@
 public class Circle : MonoBehaviour {
 
     public int vertexCount = 40;
-    public float lineWidth = 0.2f;
+    public float lineWidth = 1.0f;
     public float radius = 5.5f;
+    public float eraserStrengthMultiplier = 0.1f;
 
     private LineRenderer lineRenderer;
     private Vector3 screenCenter = Vector3.zero;
+
+    private float oldPaddlePosition = 0.0f;
 
     private void Awake()
     {
@@ -17,8 +20,37 @@ public class Circle : MonoBehaviour {
         DrawCircle();
     }
 
-    void DrawCircle()
+    public void ProcessPaddle(float value) {
+        if(oldPaddlePosition == value)
+        return;
+        oldPaddlePosition = value;
+        int index = (int)Mathf.Round(value * (vertexCount));
+        var oldKeyFrames = lineRenderer.widthCurve.keys;
+        AnimationCurve curve = new AnimationCurve();
+        for(int i = 0; i < oldKeyFrames.Length; ++i) {
+            float oldValue = oldKeyFrames[i].value;
+            if(i == index) {
+                oldValue -= lineWidth * eraserStrengthMultiplier;
+                if(oldValue < 0.0f)
+                    oldValue = 0.0f;
+            }
+            curve.AddKey((float)i/oldKeyFrames.Length, oldValue);
+        }
+        lineRenderer.widthCurve = curve;
+    }
+
+    public void ResetCircle() {
+        AnimationCurve curve = new AnimationCurve();
+        for(int i = 0; i < vertexCount + 1; i++)
+        {
+            curve.AddKey((float)i/vertexCount, 1.0f * lineRenderer.widthMultiplier);
+        }
+        lineRenderer.widthCurve = curve;
+    }
+
+    private void DrawCircle()
     {
+        ResetCircle();
         lineRenderer.widthMultiplier = lineWidth;
         float alpha = (2.0f * Mathf.PI) / vertexCount;
         float angle = 0.0f;

@@ -23,9 +23,7 @@ public class OneHitBlock : MonoBehaviour {
         int maxHits = hitSprites.Length + 1;
         if (timesHit == maxHits) {
             numberOfBricks--;
-            print("Number of bricks: " + numberOfBricks);
             if(numberOfBricks <= 0) {
-                print("no blocks left");
                 gameManager.LoadNextLevel();
             }
             Destroy(gameObject);
@@ -46,7 +44,6 @@ public class OneHitBlock : MonoBehaviour {
         //isBreakable = this.tag == "Breakable";
         numberOfBricks++;
         gameManager = GameObject.FindObjectOfType<GameManager>();
-            print("Number of bricks: " + numberOfBricks);
 	}
 	
 	// Update is called once per frame

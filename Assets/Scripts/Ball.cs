@@ -23,13 +23,6 @@ public class Ball : MonoBehaviour {
         paddleToBalldistance = GetComponent<CircleCollider2D>().radius + (paddle.GetComponent<BoxCollider2D>().size.y / 2);
 	}
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (!gameStarted)
-            return;
-        GetComponent<AudioSource>().Play();
-    }
-
     // Update is called once per frame
     void Update () {
         if (!gameStarted)

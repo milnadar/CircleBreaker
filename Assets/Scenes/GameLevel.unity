@@ -198,16 +198,16 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 107472619}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -391.2, y: 307.5, z: 0}
+  m_LocalPosition: {x: -397, y: 310.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 509763571}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -391.2, y: 307.5}
-  m_SizeDelta: {x: 81.6, y: 31.1}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50, y: -25.38}
+  m_SizeDelta: {x: 100, y: 50.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &107472621
 MonoBehaviour:
@@ -235,7 +235,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 42
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -292,26 +292,6 @@ Prefab:
     - target: {fileID: 4886867011405930, guid: c081acb438fadbb42bec60e120064d2f, type: 2}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 114979340421726374, guid: c081acb438fadbb42bec60e120064d2f,
-        type: 2}
-      propertyPath: paddle
-      value: 
-      objectReference: {fileID: 2018873089}
-    - target: {fileID: 50237790139763122, guid: c081acb438fadbb42bec60e120064d2f,
-        type: 2}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 50237790139763122, guid: c081acb438fadbb42bec60e120064d2f,
-        type: 2}
-      propertyPath: m_GravityScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 58127106600102498, guid: c081acb438fadbb42bec60e120064d2f,
-        type: 2}
-      propertyPath: m_Radius
-      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c081acb438fadbb42bec60e120064d2f, type: 2}
@@ -431,8 +411,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vertexCount: 40
-  lineWidth: 0.06
+  lineWidth: 0.25
   radius: 5.5
+  eraserStrengthMultiplier: 0.1
 --- !u!4 &336157872
 Transform:
   m_ObjectHideFlags: 0
@@ -575,7 +556,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 509763567}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 446.5, y: 335, z: 0}
+  m_LocalPosition: {x: 447, y: 335.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 107472620}
@@ -612,7 +593,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 549799856}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -316.05005, y: 307.45, z: 0}
+  m_LocalPosition: {x: -312.65, y: 310.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 509763571}
@@ -620,8 +601,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -316.05005, y: 307.45}
-  m_SizeDelta: {x: 68.7, y: 31}
+  m_AnchoredPosition: {x: -312.65, y: 310.12}
+  m_SizeDelta: {x: 68.7, y: 50.755}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &549799858
 MonoBehaviour:
@@ -649,7 +630,7 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 3
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -746,6 +727,11 @@ Prefab:
       propertyPath: m_Size.y
       value: 0.45
       objectReference: {fileID: 0}
+    - target: {fileID: 114569980101200996, guid: 2841ed6162b108046ba4383b55f7b286,
+        type: 2}
+      propertyPath: drawnCircle
+      value: 
+      objectReference: {fileID: 336157871}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2841ed6162b108046ba4383b55f7b286, type: 2}
   m_IsPrefabParent: 0
@@ -779,6 +765,7 @@ MonoBehaviour:
   currentLevel: 0
   lives: 5
   text: {fileID: 549799858}
+  tesSetup: 0
   oneHitBrick: {fileID: 1141572345030706, guid: 88541d4bcb43cf24084ae36410115bf6,
     type: 2}
   twoHitBrick: {fileID: 1141572345030706, guid: 2a68a5405523db349aec62510c22fa20,
@@ -840,12 +827,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 50d5b46367178e546a339e887da0fee9, type: 2}
   m_IsPrefabParent: 0
---- !u!114 &2018873089 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114569980101200996, guid: 2841ed6162b108046ba4383b55f7b286,
-    type: 2}
-  m_PrefabInternal: {fileID: 1015417533}
-  m_Script: {fileID: 11500000, guid: 9818415b8096bb349802a81cc4022898, type: 3}
 --- !u!1001 &2056302524
 Prefab:
   m_ObjectHideFlags: 0
