@@ -27,7 +27,7 @@ public class Paddle : MonoBehaviour
         float coefficient = (1 / (resultVector.magnitude / radius));
         Vector2 mresultVector = resultVector * coefficient;
         Vector2 vv = screenCenter + mresultVector;
-        Vector3 vector = new Vector3(vv.x, vv.y, 0);
+        Vector3 vector = new Vector3(vv.x, vv.y, -1.0f);
         transform.position = vector;
         transform.eulerAngles = new Vector3(0, 0, Vector2.SignedAngle(new Vector2(1, 0), mresultVector) + 90.0f);
         float angle = Vector2.SignedAngle(new Vector2(-1, 0), mresultVector);
