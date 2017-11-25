@@ -9,7 +9,7 @@ public class Paddle : MonoBehaviour
     private float height = 0.0f;
     private Vector2 screenCenter;
     public Circle drawnCircle;
-    public float sensitivity = 0.5f;
+    public float sensitivity = 0.3f;
 
     void Start()
     {
