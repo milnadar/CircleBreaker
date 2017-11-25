@@ -198,7 +198,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 107472619}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -397, y: 310.12, z: 0}
+  m_LocalPosition: {x: -338.5, y: 266.12, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 509763571}
@@ -346,7 +346,7 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 0
   m_Positions: []
   m_Parameters:
     serializedVersion: 2
@@ -556,7 +556,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 509763567}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 447, y: 335.5, z: 0}
+  m_LocalPosition: {x: 388.5, y: 291.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 107472620}
@@ -652,15 +652,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4054881911225854, guid: 2841ed6162b108046ba4383b55f7b286, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4054881911225854, guid: 2841ed6162b108046ba4383b55f7b286, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4054881911225854, guid: 2841ed6162b108046ba4383b55f7b286, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4054881911225854, guid: 2841ed6162b108046ba4383b55f7b286, type: 2}
       propertyPath: m_LocalRotation.x
@@ -732,6 +732,16 @@ Prefab:
       propertyPath: drawnCircle
       value: 
       objectReference: {fileID: 336157871}
+    - target: {fileID: 114569980101200996, guid: 2841ed6162b108046ba4383b55f7b286,
+        type: 2}
+      propertyPath: controlsType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114569980101200996, guid: 2841ed6162b108046ba4383b55f7b286,
+        type: 2}
+      propertyPath: sensitivity
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2841ed6162b108046ba4383b55f7b286, type: 2}
   m_IsPrefabParent: 0

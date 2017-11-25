@@ -72,6 +72,7 @@ public class GameManager : MonoBehaviour {
 
     private void LoadLevel(int levelNumber)
     {
+        Cursor.lockState = CursorLockMode.Locked;
         ball.startNewLevel();
         Brick.numberOfBricks = 0;
         currentLevel++;
